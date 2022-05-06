@@ -1,6 +1,7 @@
 ## Tutorial Dasar Flask
 
 Repo ini untuk belajar bersama Flask, pelajaran ini termasuk CRUD sederhana.
+Menggunakan **SQLite3**, jadi install terlebih dahulu.
 
 ### Cara menggunakan
 
