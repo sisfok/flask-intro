@@ -1,3 +1,37 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
+    width: 60rem;
+    font-size: calc(1rem + 0.00625 * (80vw - 55rem));
+    line-height: 1.4;
+    margin: 0px auto;
+    word-break: break-word;
+    overflow-y: scroll;
+}
+
+nav {
+    margin-top: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: .5em;
+    margin-bottom: .25em;
+}
+
+.nobottom {
+    border-bottom: none;
+}
+
+.name {
+    margin-bottom: 0;
+}
+
+.sub {
+    margin-top: 0;
 }
