@@ -39,6 +39,21 @@ def show(id):
     task_to_show = Todo.query.get_or_404(id)
     return render_template('show.html', task = task_to_show)
 
+@app.route('/update/<int:id>', methods=['get', 'post'])
+def update(id):
+    task = Todo.query.get_or_404(id)
+    
+    if request.method == 'POST':
+        task.content = request.form['content']
+
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'Error when edit data'
+    else:
+        return render_template('update.html', task=task)
+
 @app.route('/delete/<int:id>')
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)

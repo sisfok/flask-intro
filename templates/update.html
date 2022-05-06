@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>SisfoK &#8212; Home</title>
+{% endblock %}
+
+{% block body %}
+
+<h3>Update Log</h3>
+
+<form action="/update/{{task.id}}" method="post">
+    <textarea name="content" id="content" cols="100" rows="10">{{ task.content }}</textarea>
+    <br>
+    <input type="submit" value="Save"></input>
+</form>
+
+{% endblock %}
