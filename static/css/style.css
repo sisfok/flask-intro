@@ -35,3 +35,25 @@ nav li {
 .sub {
     margin-top: 0;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+}
+
+.post-title-pl {
+    padding-left: .5rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color1);
+}
+
+.center {
+    text-align: center;
+}

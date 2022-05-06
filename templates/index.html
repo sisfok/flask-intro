@@ -14,4 +14,28 @@
         <li><a href="/signature.txt">signature</a></li>
     </ul>
 </nav>
+
+<br>
+
+<form action="/" method="post">
+    <input type="text" name="content" id="content">
+    <input type="submit" value="Save"></input>
+</form>
+
+<br>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Action</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td class="center"><code class="er">{{ task.data_created }}</code></td>
+        <td class="post-title-pl">{{ task.content }}</a></td>
+        <td class="center"><a href="" title="">view</a> | <a href="" title="">edit</a> | <a href="" title="">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
