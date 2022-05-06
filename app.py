@@ -30,6 +30,10 @@ def index():
         tasks = Todo.query.order_by(Todo.data_created).all()
         return render_template('index.html', tasks = tasks)
 
+@app.route('/add/')
+def add():
+    return render_template('add.html')
+
 @app.route('/show/<int:id>')
 def show(id):
     task_to_show = Todo.query.get_or_404(id)
