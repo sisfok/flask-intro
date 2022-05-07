@@ -23,12 +23,12 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r> ' % self.id
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET'])
 def index():
     tasks = Todo.query.order_by(Todo.data_created).all()
     return render_template('index.html', tasks = tasks)
 
-@app.route('/add', methods=['GET', 'POST'])
+@app.route('/add', methods=['GET','POST'])
 def submit():
     form = MyForm()
     if form.validate_on_submit():
@@ -50,20 +50,21 @@ def show(id):
     task_to_show = Todo.query.get_or_404(id)
     return render_template('show.html', task = task_to_show)
 
-@app.route('/update/<int:id>', methods=['get', 'post'])
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     task = Todo.query.get_or_404(id)
+    form = MyForm(obj=task)
     
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate_on_submit():
         task.content = request.form['content']
 
         try:
             db.session.commit()
             return redirect('/')
         except:
-            return 'Error when edit data'
+            return 'Error when add data'
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', task=task, form=form)
 
 @app.route('/delete/<int:id>')
 def delete(id):

@@ -8,8 +8,10 @@
 
 <h3>Update Log</h3>
 
-<form action="/update/{{task.id}}" method="post">
-    <textarea name="content" id="content" cols="100" rows="10">{{ task.content }}</textarea>
+<form action="/update/{{task.id}}" method="POST">
+    {{ form.csrf_token }}
+    {{ form.content.label }}
+    {{ form.content(size=50) }}
     <br>
     <input type="submit" value="Save"></input>
 </form>
