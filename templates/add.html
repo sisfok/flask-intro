@@ -6,9 +6,11 @@
 
 {% block body %}
 
-<form action="/" method="post">
+<form action="/add" method="post">
     <!-- <input type="text" name="content" id="content"> -->
-    <textarea name="content" id="" cols="100" rows="10"></textarea>
+    <!-- <textarea name="content" id="" cols="100" rows="10"></textarea> -->
+    {{ form.csrf_token }}
+    {{ form.content.label }} {{ form.content(size=20) }}
     <br>
     <input type="submit" value="Save"></input>
 </form>
