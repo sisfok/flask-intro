@@ -10,7 +10,7 @@ pip install virtualenv
 virtualenv env
 source env/bin/activate
 
-pip install flask flask_wtf flask-sqlalchemy
+pip install -r requirements.txt
 python app.py
 ```
 
